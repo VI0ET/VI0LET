@@ -3835,7 +3835,7 @@ h1.page-title + .tag-cloud-list {
   color: #fff;
   position: relative;
   top: 25px;
-  z-index: 2;
+  z-index: 5;
   -webkit-animation: text 0.5s ease infinite alternate;
   -moz-animation: text 0.5s ease infinite alternate;
   -webkit-animation: text 0.5s ease infinite alternate;
@@ -4162,6 +4162,7 @@ body {
   min-height: 100%;
 }
 body {
+  z-index: 2;
   background: #00c6ff;
 /* fallback for old browsers */
   background: -webkit--webkit-linear-gradient(right, #02ffdd, #013733);
@@ -4177,6 +4178,12 @@ body {
   background: linear-gradient(to left, #02ffdd, #013733);
 /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: arial;
+}
+body.loaded {
+  z-index: -1000;
+}
+body.loaded .cube-folding {
+  display: none;
 }
 h1 {
   font-size: 26px;
