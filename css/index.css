@@ -4158,7 +4158,7 @@ h1.page-title + .tag-cloud-list {
   }
 }
 body {
-  z-index: 5;
+  z-index: 999;
   background: #00c6ff;
 /* fallback for old browsers */
   background: -webkit--webkit-linear-gradient(right, #02ffdd, #013733);
