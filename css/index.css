@@ -3835,7 +3835,7 @@ h1.page-title + .tag-cloud-list {
   color: #fff;
   position: relative;
   top: 25px;
-  z-index: 5;
+  z-index: 1000;
   -webkit-animation: text 0.5s ease infinite alternate;
   -moz-animation: text 0.5s ease infinite alternate;
   -webkit-animation: text 0.5s ease infinite alternate;
@@ -4156,10 +4156,6 @@ h1.page-title + .tag-cloud-list {
     bottom: -18px;
     width: 100px;
   }
-}
-html,
-body {
-  min-height: 100%;
 }
 body {
   z-index: 5;
