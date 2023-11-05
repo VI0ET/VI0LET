@@ -4162,7 +4162,7 @@ body {
   min-height: 100%;
 }
 body {
-  z-index: 2;
+  z-index: 5;
   background: #00c6ff;
 /* fallback for old browsers */
   background: -webkit--webkit-linear-gradient(right, #02ffdd, #013733);
