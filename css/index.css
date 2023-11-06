@@ -3829,8 +3829,8 @@ h1.page-title + .tag-cloud-list {
 }
 .loading-bg {
   position: fixed;
-  z-index: 1000;
-  width: 100%;
+  z-index: 900;
+  width: 50%;
   height: 100%;
   background: -webkit-linear-gradient(right, #02ffdd, #013733);
   background: -moz-linear-gradient(right, #02ffdd, #013733);
@@ -3839,15 +3839,24 @@ h1.page-title + .tag-cloud-list {
   background: linear-gradient(to left, #02ffdd, #013733);
   font-family: arial;
 }
-#loading-box,
-.loading {
+.loading-bg.loaded {
+  z-index: -1000;
+}
+.loading-bg.loaded .loading-bg {
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -o-transition: all 1s;
+  -ms-transition: all 1s;
+  transition: all 1s;
+}
+#loading-box .loading {
   font-size: 12px;
   letter-spacing: 0.1em;
   display: block;
   color: #fff;
   position: relative;
   top: 25px;
-  z-index: 1001;
+  z-index: 1000;
   -webkit-animation: text 0.5s ease infinite alternate;
   -moz-animation: text 0.5s ease infinite alternate;
   -webkit-animation: text 0.5s ease infinite alternate;
@@ -3856,18 +3865,14 @@ h1.page-title + .tag-cloud-list {
   -ms-animation: text 0.5s ease infinite alternate;
   animation: text 0.5s ease infinite alternate;
 }
-#loading-box.loaded,
-.loading.loaded {
-  z-index: -1000;
-}
-#loading-box.loaded .cube-wrapper,
-.loading.loaded .cube-wrapper {
+#loading-box .loading.loaded z-index -1000 .cube-wrapper {
   display: none;
 }
 @import url("https://fonts.googleapis.com/css?family=ArchivoNarrow");
 .cube-folding {
   width: 50px;
   height: 50px;
+  z-index: 1000;
   display: inline-block;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -3898,6 +3903,7 @@ h1.page-title + .tag-cloud-list {
   left: 0;
   top: 0;
   display: block;
+  z-index: 1;
   width: 25px;
   height: 25px;
   -moz-transform-origin: 100% 100%;
@@ -3969,6 +3975,9 @@ h1.page-title + .tag-cloud-list {
   -ms-animation-delay: 0.6s;
   animation-delay: 0.6s;
   background-color: #e6e6e6;
+}
+.cube-folding.loaded z-index -1000 .cube-folding {
+  display: none;
 }
 @-webkit-keyframes folding {
   0%, 10% {
@@ -4121,7 +4130,7 @@ h1.page-title + .tag-cloud-list {
   margin: auto;
   width: 90px;
   height: 6px;
-  z-index: -1;
+  z-index: 1;
   background-color: rgba(0,0,0,0.1);
   -webkit-filter: blur(2px);
   filter: blur(2px);
