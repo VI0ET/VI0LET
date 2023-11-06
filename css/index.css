@@ -3835,6 +3835,7 @@ h1.page-title + .tag-cloud-list {
   color: #fff;
   position: relative;
   top: 25px;
+  font-family: arial;
   z-index: 1000;
   -webkit-animation: text 0.5s ease infinite alternate;
   -moz-animation: text 0.5s ease infinite alternate;
@@ -3848,8 +3849,8 @@ h1.page-title + .tag-cloud-list {
 .loading.loaded {
   z-index: -1000;
 }
-#loading-box.loaded .cube-folding,
-.loading.loaded .cube-folding {
+#loading-box.loaded .cube-wrapper,
+.loading.loaded .cube-wrapper {
   display: none;
 }
 @import url("https://fonts.googleapis.com/css?family=ArchivoNarrow");
@@ -4158,7 +4159,6 @@ h1.page-title + .tag-cloud-list {
   }
 }
 body {
-  z-index: 999;
   background: #00c6ff;
 /* fallback for old browsers */
   background: -webkit--webkit-linear-gradient(right, #02ffdd, #013733);
