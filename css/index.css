@@ -3827,52 +3827,26 @@ h1.page-title + .tag-cloud-list {
 #nav .site-page:not(.child):hover:after {
   width: 100%;
 }
+@import url("https://fonts.googleapis.com/css?family=ArchivoNarrow");
 .loading-bg {
   position: fixed;
-  z-index: 900;
-  width: 50%;
+  z-index: 1000;
+  width: 100%;
   height: 100%;
   background: -webkit-linear-gradient(right, #02ffdd, #013733);
   background: -moz-linear-gradient(right, #02ffdd, #013733);
   background: -o-linear-gradient(right, #02ffdd, #013733);
   background: -ms-linear-gradient(right, #02ffdd, #013733);
   background: linear-gradient(to left, #02ffdd, #013733);
-  font-family: arial;
+  -webkit-animation: loading-bg 4s forwards;
+  -moz-animation: loading-bg 4s forwards;
+  -o-animation: loading-bg 4s forwards;
+  -ms-animation: loading-bg 4s forwards;
+  animation: loading-bg 4s forwards;
 }
-.loading-bg.loaded {
-  z-index: -1000;
-}
-.loading-bg.loaded .loading-bg {
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -ms-transition: all 1s;
-  transition: all 1s;
-}
-#loading-box .loading {
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  display: block;
-  color: #fff;
-  position: relative;
-  top: 25px;
-  z-index: 1000;
-  -webkit-animation: text 0.5s ease infinite alternate;
-  -moz-animation: text 0.5s ease infinite alternate;
-  -webkit-animation: text 0.5s ease infinite alternate;
-  -moz-animation: text 0.5s ease infinite alternate;
-  -o-animation: text 0.5s ease infinite alternate;
-  -ms-animation: text 0.5s ease infinite alternate;
-  animation: text 0.5s ease infinite alternate;
-}
-#loading-box .loading.loaded z-index -1000 .cube-wrapper {
-  display: none;
-}
-@import url("https://fonts.googleapis.com/css?family=ArchivoNarrow");
 .cube-folding {
   width: 50px;
   height: 50px;
-  z-index: 1000;
   display: inline-block;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
@@ -3903,7 +3877,6 @@ h1.page-title + .tag-cloud-list {
   left: 0;
   top: 0;
   display: block;
-  z-index: 1;
   width: 25px;
   height: 25px;
   -moz-transform-origin: 100% 100%;
@@ -3976,7 +3949,7 @@ h1.page-title + .tag-cloud-list {
   animation-delay: 0.6s;
   background-color: #e6e6e6;
 }
-.cube-folding.loaded z-index -1000 .cube-folding {
+.cube-folding.loaded {
   display: none;
 }
 @-webkit-keyframes folding {
@@ -4113,6 +4086,7 @@ h1.page-title + .tag-cloud-list {
 }
 .cube-wrapper {
   position: fixed;
+  z-index: 1001;
   left: 50%;
   top: 50%;
   margin-top: -50px;
@@ -4120,6 +4094,11 @@ h1.page-title + .tag-cloud-list {
   width: 100px;
   height: 100px;
   text-align: center;
+  -webkit-animation: fadeOut 0.5s ease infinite alternate;
+  -moz-animation: fadeOut 0.5s ease infinite alternate;
+  -o-animation: fadeOut 0.5s ease infinite alternate;
+  -ms-animation: fadeOut 0.5s ease infinite alternate;
+  animation: fadeOut 0.5s ease infinite alternate;
 }
 .cube-wrapper:after {
   content: "";
@@ -4144,6 +4123,25 @@ h1.page-title + .tag-cloud-list {
   -o-animation: shadow 0.5s ease infinite alternate;
   -ms-animation: shadow 0.5s ease infinite alternate;
   animation: shadow 0.5s ease infinite alternate;
+}
+.cube-wrapper .loading {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  display: block;
+  color: #fff;
+  position: relative;
+  top: 25px;
+  z-index: 2;
+  -webkit-animation: text 0.5s ease infinite alternate;
+  -moz-animation: text 0.5s ease infinite alternate;
+  -webkit-animation: text 0.5s ease infinite alternate;
+  -moz-animation: text 0.5s ease infinite alternate;
+  -o-animation: text 0.5s ease infinite alternate;
+  -ms-animation: text 0.5s ease infinite alternate;
+  animation: text 0.5s ease infinite alternate;
+}
+.cube-wrapper .loading.loaded .cube-wrapper .loading {
+  display: none;
 }
 @-webkit-keyframes text {
   100% {
@@ -4176,6 +4174,70 @@ h1.page-title + .tag-cloud-list {
   100% {
     bottom: -18px;
     width: 100px;
+  }
+}
+@-moz-keyframes loading-bg {
+  0% {
+    background: -webkit-linear-gradient(right, #02ffdd, #013733);
+    background: -moz-linear-gradient(right, #02ffdd, #013733);
+    background: -o-linear-gradient(right, #02ffdd, #013733);
+    background: -ms-linear-gradient(right, #02ffdd, #013733);
+    background: linear-gradient(to left, #02ffdd, #013733);
+  }
+  100% {
+    background: -webkit-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -moz-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -o-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -ms-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: linear-gradient(to left, rgba(2,255,221,0), rgba(1,55,51,0));
+  }
+}
+@-webkit-keyframes loading-bg {
+  0% {
+    background: -webkit-linear-gradient(right, #02ffdd, #013733);
+    background: -moz-linear-gradient(right, #02ffdd, #013733);
+    background: -o-linear-gradient(right, #02ffdd, #013733);
+    background: -ms-linear-gradient(right, #02ffdd, #013733);
+    background: linear-gradient(to left, #02ffdd, #013733);
+  }
+  100% {
+    background: -webkit-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -moz-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -o-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -ms-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: linear-gradient(to left, rgba(2,255,221,0), rgba(1,55,51,0));
+  }
+}
+@-o-keyframes loading-bg {
+  0% {
+    background: -webkit-linear-gradient(right, #02ffdd, #013733);
+    background: -moz-linear-gradient(right, #02ffdd, #013733);
+    background: -o-linear-gradient(right, #02ffdd, #013733);
+    background: -ms-linear-gradient(right, #02ffdd, #013733);
+    background: linear-gradient(to left, #02ffdd, #013733);
+  }
+  100% {
+    background: -webkit-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -moz-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -o-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -ms-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: linear-gradient(to left, rgba(2,255,221,0), rgba(1,55,51,0));
+  }
+}
+@keyframes loading-bg {
+  0% {
+    background: -webkit-linear-gradient(right, #02ffdd, #013733);
+    background: -moz-linear-gradient(right, #02ffdd, #013733);
+    background: -o-linear-gradient(right, #02ffdd, #013733);
+    background: -ms-linear-gradient(right, #02ffdd, #013733);
+    background: linear-gradient(to left, #02ffdd, #013733);
+  }
+  100% {
+    background: -webkit-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -moz-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -o-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: -ms-linear-gradient(right, rgba(2,255,221,0), rgba(1,55,51,0));
+    background: linear-gradient(to left, rgba(2,255,221,0), rgba(1,55,51,0));
   }
 }
 @-moz-keyframes folding {
@@ -4349,6 +4411,54 @@ h1.page-title + .tag-cloud-list {
     transform: perspective(140px) rotateY(180deg);
     -webkit-opacity: 0;
     -moz-opacity: 0;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+  }
+  100% {
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
