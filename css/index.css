@@ -3827,6 +3827,27 @@ h1.page-title + .tag-cloud-list {
 #nav .site-page:not(.child):hover:after {
   width: 100%;
 }
+.loading-bg {
+  position: fixed;
+  z-index: 1000;
+  width: 50%;
+  height: 100%;
+  background: #00c6ff;
+/* fallback for old browsers */
+  background: -webkit--webkit-linear-gradient(right, #02ffdd, #013733);
+  background: -webkit--moz-linear-gradient(right, #02ffdd, #013733);
+  background: -webkit--o-linear-gradient(right, #02ffdd, #013733);
+  background: -webkit--ms-linear-gradient(right, #02ffdd, #013733);
+  background: -webkit-linear-gradient(to left, #02ffdd, #013733);
+/* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(right, #02ffdd, #013733);
+  background: -moz-linear-gradient(right, #02ffdd, #013733);
+  background: -o-linear-gradient(right, #02ffdd, #013733);
+  background: -ms-linear-gradient(right, #02ffdd, #013733);
+  background: linear-gradient(to left, #02ffdd, #013733);
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-family: arial;
+}
 #loading-box,
 .loading {
   font-size: 12px;
@@ -3835,7 +3856,6 @@ h1.page-title + .tag-cloud-list {
   color: #fff;
   position: relative;
   top: 25px;
-  font-family: arial;
   z-index: 1000;
   -webkit-animation: text 0.5s ease infinite alternate;
   -moz-animation: text 0.5s ease infinite alternate;
@@ -4157,23 +4177,6 @@ h1.page-title + .tag-cloud-list {
     bottom: -18px;
     width: 100px;
   }
-}
-body {
-  background: #00c6ff;
-/* fallback for old browsers */
-  background: -webkit--webkit-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit--moz-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit--o-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit--ms-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit-linear-gradient(to left, #02ffdd, #013733);
-/* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(right, #02ffdd, #013733);
-  background: -moz-linear-gradient(right, #02ffdd, #013733);
-  background: -o-linear-gradient(right, #02ffdd, #013733);
-  background: -ms-linear-gradient(right, #02ffdd, #013733);
-  background: linear-gradient(to left, #02ffdd, #013733);
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  font-family: arial;
 }
 @-moz-keyframes folding {
   0%, 10% {
