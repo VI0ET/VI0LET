@@ -3830,7 +3830,7 @@ h1.page-title + .tag-cloud-list {
 .loading-bg {
   position: fixed;
   z-index: 1000;
-  width: 50%;
+  width: 100%;
   height: 100%;
   background: -webkit-linear-gradient(right, #02ffdd, #013733);
   background: -moz-linear-gradient(right, #02ffdd, #013733);
@@ -3847,7 +3847,7 @@ h1.page-title + .tag-cloud-list {
   color: #fff;
   position: relative;
   top: 25px;
-  z-index: 1000;
+  z-index: 1001;
   -webkit-animation: text 0.5s ease infinite alternate;
   -moz-animation: text 0.5s ease infinite alternate;
   -webkit-animation: text 0.5s ease infinite alternate;
