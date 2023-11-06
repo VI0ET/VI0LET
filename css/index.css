@@ -3832,20 +3832,11 @@ h1.page-title + .tag-cloud-list {
   z-index: 1000;
   width: 50%;
   height: 100%;
-  background: #00c6ff;
-/* fallback for old browsers */
-  background: -webkit--webkit-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit--moz-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit--o-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit--ms-linear-gradient(right, #02ffdd, #013733);
-  background: -webkit-linear-gradient(to left, #02ffdd, #013733);
-/* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(right, #02ffdd, #013733);
   background: -moz-linear-gradient(right, #02ffdd, #013733);
   background: -o-linear-gradient(right, #02ffdd, #013733);
   background: -ms-linear-gradient(right, #02ffdd, #013733);
   background: linear-gradient(to left, #02ffdd, #013733);
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: arial;
 }
 #loading-box,
