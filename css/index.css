@@ -4121,7 +4121,7 @@ h1.page-title + .tag-cloud-list {
   margin: auto;
   width: 90px;
   height: 6px;
-  z-index: 1;
+  z-index: -1;
   background-color: rgba(0,0,0,0.1);
   -webkit-filter: blur(2px);
   filter: blur(2px);
