@@ -1,0 +1,645 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>database | VI0LET</title><meta name="author" content="Viola,1427368054@qq.com"><meta name="copyright" content="Viola"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ccffff"><meta name="description" content="Database System learning note Week 1 1.1 key terms   Data   Facts and statistics  collected together for reference or  analysis 收集起来供参考或分析的事实和统计数据   Data is the actual information stored in the  datab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="database">
+<meta property="og:url" content="https://vi0et.github.io/2024/03/30/course/database/index.html">
+<meta property="og:site_name" content="VI0LET">
+<meta property="og:description" content="Database System learning note Week 1 1.1 key terms   Data   Facts and statistics  collected together for reference or  analysis 收集起来供参考或分析的事实和统计数据   Data is the actual information stored in the  datab">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.keaitupian.cn/uploads/2021/12/30/fc28eeb7bf984f769802f07dedb3d6cb.jpg">
+<meta property="article:published_time" content="2024-03-30T05:19:16.000Z">
+<meta property="article:modified_time" content="2024-03-31T07:53:28.431Z">
+<meta property="article:author" content="Viola">
+<meta property="article:tag" content="Viola">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.keaitupian.cn/uploads/2021/12/30/fc28eeb7bf984f769802f07dedb3d6cb.jpg"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://vi0et.github.io/2024/03/30/course/database/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Viola","link":"链接: ","source":"来源: VI0LET","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'database',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-31 15:53:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#330033')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ccffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head><body><div id="loading-box"><div class="loading-bg"></div><div class="cube-wrapper"><div class="cube-folding"><span class="leaf1"></span><span class="leaf2"></span><span class="leaf3"></span><span class="leaf4"></span></div><span class="loading" data-name="Loading">Loading</span></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = 'hidden';
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+
+preloader.initLoading()
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://img.keaitupian.cn/uploads/2021/12/30/fc28eeb7bf984f769802f07dedb3d6cb.jpg" onerror="onerror=null;src='/img/friend_404.png'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章夹</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%91%A8%E6%8A%A5/"><i class="fa-fw fas fa-folder-open"></i><span> 周报</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 评论</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="VI0LET"></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 文章夹</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%91%A8%E6%8A%A5/"><i class="fa-fw fas fa-folder-open"></i><span> 周报</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-comments"></i><span> 评论</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">database</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-30T05:19:16.000Z" title="发表于 2024-03-30 13:19:16">2024-03-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-31T07:53:28.431Z" title="更新于 2024-03-31 15:53:28">2024-03-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/course/">course</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="database"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><p>Database System learning note</p>
+<h1>Week 1</h1>
+<h2 id="1-1">1.1</h2>
+<h3 id="key-terms">key terms</h3>
+<ul>
+<li>
+<h4 id="Data"><strong>Data</strong></h4>
+<ul>
+<li>
+<p>Facts and statistics  collected together for reference or  analysis</p>
+<p><em>收集起来供参考或分析的事实和统计数据</em></p>
+</li>
+<li>
+<p>Data is the actual information stored in the  database</p>
+<p><em>数据是存储在数据库中的实际信息</em></p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="Database"><strong>Database</strong></h4>
+<ul>
+<li>
+<p>A shared collection of  logically related data (and a  description of this data), designed to  meet the information needs of an  organization.</p>
+<p><em>逻辑相关数据的共享集合（以及对这些数据的描述），旨在满足组织的信息需求。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="DBMS"><strong>DBMS</strong></h4>
+<ul>
+<li>
+<p>A software system</p>
+<p><em>一个软件系统</em></p>
+</li>
+<li>
+<p>Enables users to define, create, maintain, and  control access to the database.</p>
+<p><em>使用户能够定义、创建、维护和控制对数据库的访问。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="Database-application-programme"><strong>Database application programme</strong></h4>
+<ul>
+<li>
+<p>A computer  program that interacts with database</p>
+<p><em>与数据库交互的计算机程序</em></p>
+</li>
+<li>
+<p>Issues appropriate requests (eg SQL statements)  to the DBMS</p>
+<p><em>向数据库管理系统发出适当请求（如 SQL 语句）</em></p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="Data-model"><strong>Data model</strong></h4>
+<ul>
+<li>
+<p>A model is a representation of ‘real world’ objects  and events, and their associations.</p>
+<p><em>模型是对 &quot;现实世界 &quot;中的物体和事件及其关联的表示。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="Schema"><strong>Schema</strong></h4>
+<ul>
+<li>
+<p>The description of the database is the database  schema.</p>
+<p><em>对数据库的描述就是数据库模式。</em></p>
+</li>
+<li>
+<p>Data is the actual information stored in the  database</p>
+<p><em>数据是存储在数据库中的实际信息</em></p>
+</li>
+<li>
+<p>A relation schema can be thought of as the basic information  describing a table or relation.</p>
+<p><em>关系模式可视为描述表或关系的基本信息。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="Relation">Relation</h4>
+<ul>
+<li>
+<p>A relation is a table with rows and columns.</p>
+<p><em>关系是一个有行和列的表格。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="Relational-algebra">Relational algebra</h4>
+<ul>
+<li>
+<p>Relational algebra is formal language associated with the  relational Model.</p>
+<p><em>关系代数是与关系模型相关的形式语言。</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Components-in-the-Database-Environment">Components in the Database Environment</h3>
+<p><img src="database/componets.png" alt="componets"></p>
+<h3 id="Roles-in-the-Database-Environment">Roles in the Database Environment</h3>
+<ul>
+<li>
+<h3 id="Data-Administrator-DA"><strong>Data Administrator (DA)</strong></h3>
+</li>
+<li>
+<h3 id="Database-Administrator-DBA"><strong>Database Administrator (DBA)</strong></h3>
+</li>
+<li>
+<h3 id="Database-Designers-Logical-and-Physical"><strong>Database Designers (Logical and Physical)</strong></h3>
+</li>
+<li>
+<h3 id="Application-Developers">**Application Developers **</h3>
+</li>
+<li>
+<h3 id="End-Users-naive-and-sophisticated"><strong>End Users (naive and sophisticated)</strong></h3>
+</li>
+</ul>
+<h3 id="Three-level-ANSI-SPARC-architecture">Three level ANSI-SPARC architecture</h3>
+<p>![Three level ANSI-SPARC architecture](database/Three level ANSI-SPARC architecture.png)</p>
+<ul>
+<li>
+<h4 id="Objective">Objective</h4>
+<p><strong>Separate each user’s view of the database from the  way the database is physically represented.</strong></p>
+<ul>
+<li>
+<p>Users’ views should be unaffected by changes to  the physical aspects of storage.</p>
+<p><em>用户视图不应受存储物理方面变化的影响。</em></p>
+</li>
+<li>
+<p>Internal structure of the database should be  unaffected by changes to the physical aspects of  storage.</p>
+<p><em>数据库的内部结构应不受存储物理方面变化的影响。</em></p>
+</li>
+<li>
+<p>The DBA should be able to change the  conceptual structure of the database with  minimum affect to users’ views.</p>
+<p><em>DBA 应能在对用户视图影响最小的情况下更改数据库的概念结构。</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2">1.2</h2>
+<h3 id="key-terns">key terns</h3>
+<ul>
+<li>
+<h4 id="Relational-model">Relational model</h4>
+<ul>
+<li>
+<p>In the relational model, all data is logically  structured within relations (tables).</p>
+<p><em>在关系模型中，所有数据的逻辑结构都是由关系（表）构成的。</em></p>
+</li>
+<li>
+<p>Each relation is made up of attributes (columns) of data.</p>
+<p><em>每个关系由数据的属性（列）组成。</em></p>
+</li>
+<li>
+<p>Each tuple (row) contains one value per  attribute.</p>
+<p><em>每个元组（行）包含一个属性值。</em></p>
+</li>
+<li>
+<h5 id="Terminology">Terminology</h5>
+<ul>
+<li>
+<p>Relation: A relation is a table with columns  and rows.</p>
+<p><em>关系： 关系是一个包含列和行的表。</em></p>
+</li>
+<li>
+<p>Attribute: An attribute is a named column of a  relation.</p>
+<p><em>属性： 属性是关系中命名的列。</em></p>
+</li>
+<li>
+<p>Domain: the set of allowable values for one or  more attributes.</p>
+<p><em>域：一个或多个属性的允许值集合。</em></p>
+</li>
+<li>
+<p>Tuple: A tuple is row of a relation.</p>
+<p><em>元组： 元组是关系中的行。</em></p>
+</li>
+<li>
+<p>Degree: the number of attributes in a relation.</p>
+<p><em>度：关系中属性的数量。</em></p>
+</li>
+<li>
+<p>Cardinality: the number of tuples in a relation.</p>
+</li>
+</ul>
+<p><em>卡性：关系中元组的数量。</em></p>
+<ul>
+<li>
+<p>Relational database: A collection of  normalized relations with distinct relation  names.</p>
+<p><em>关系数据库： 具有不同关系名称的规范化关系集合。</em></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<h4 id="Relational-Algebra">Relational Algebra</h4>
+<p><em>Please watch the pdf 1.2</em></p>
+</li>
+</ul>
+<h2 id="1-3">1.3</h2>
+<h3 id="ER-modeling">ER modeling</h3>
+<h4 id="Entity">Entity</h4>
+<ul>
+<li>
+<p>Basic building block of a data model.</p>
+<p><em>数据模型的基本构件。</em></p>
+</li>
+<li>
+<p>An <strong>entity</strong> has characteristics or <strong>attributes</strong>.</p>
+<p><em>实体具有特征或属性。</em></p>
+</li>
+<li>
+<p>An entity is a “thing” about which data should be  stored.</p>
+<p><em>实体是需要存储数据的 “事物”。</em></p>
+</li>
+<li>
+<p>Group of objects with same properties, identified by  enterprise as having an independent existence.</p>
+<p><em>具有相同属性的一组对象，被企业认定为独立存在。</em></p>
+</li>
+<li>
+<p>Can be objects with a physical or conceptual  existence</p>
+<p><em>可以是物理存在或概念存在的对象</em></p>
+<ul>
+<li>
+<p>Physical existence: (e.g. student or a textbook)</p>
+<p><em>物理存在：（如学生或教科书）</em></p>
+</li>
+<li>
+<p>Conceptual existence: (e.g. a module or an exam)</p>
+<p><em>概念存在：（如模块或考试）</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Intergrity</p>
+<ul>
+<li>
+<p>Entity intergrity</p>
+<ul>
+<li>In a base relation, no attribute of a primary key can be null.</li>
+</ul>
+</li>
+<li>
+<p>Domain intergrity</p>
+</li>
+<li>
+<p>Referential integrity</p>
+<ul>
+<li>If foreign key exists in a relation, either foreign key value must  match a candidate key value of some tuple in its home relation or foreign key value  must be null.</li>
+</ul>
+<p><em>如果关系中存在外键值，要么外键值必须与原关系中某个元组的候选键值相匹配，要么外键值必须为空。</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Attributes">Attributes</h4>
+<ul>
+<li>
+<p>An <strong>entity</strong> has characteristics or <strong>attributes</strong>.</p>
+<p><em>实体具有特征或属性</em></p>
+</li>
+<li>
+<p>An <strong>attribute</strong> is a discrete element of data;  it describes an <strong>entity</strong>.</p>
+<p><em>属性是一个离散的数据元素；它描述一个实体。</em></p>
+</li>
+<li>
+<p><strong>Attributes</strong> shown below the <strong>entity’s</strong> name.</p>
+<p><em>属性显示在实体名称下方。</em></p>
+</li>
+<li>
+<p>Attribute names must be carefully selected  so that they are self-explanatory and  unique.</p>
+<p>*必须仔细选择属性名称，使其不言自明且独一无二。 *</p>
+</li>
+<li>
+<p>A identifier (primary key) uniquely  identifies an instance of an entity.  <strong>Attribute</strong>(s) that are identifiers are labeled  in the <strong>entity</strong> (here with a star).</p>
+<p><em>标识符（主键）是实体实例的唯一标识。 作为标识符的属性会在实体中标注（此处用星号标注）。</em></p>
+</li>
+</ul>
+<h4 id="Relationship">Relationship</h4>
+<ul>
+<li>
+<p><strong>Entities</strong> are <strong>related</strong> to other <strong>entities</strong>.</p>
+<p><em>实体与其他实体相关。</em></p>
+</li>
+<li>
+<p><strong>Relationship</strong> describes a linkage between  <strong>two entities</strong> and is represented by an arc between them.</p>
+<p><em>关系描述了两个实体之间的联系，用它们之间的弧线表示。</em></p>
+</li>
+</ul>
+<h5 id="Relational-keys">Relational keys</h5>
+<ul>
+<li>
+<p>Candidate Key</p>
+<ul>
+<li>
+<p>A set of attributes that uniquely identifies a tuple within a  relation.</p>
+<p><em>关系中唯一标识元组的一组属性。</em></p>
+</li>
+<li>
+<p>Uniqueness : In each tuple, candidate key uniquely identify  that tuple.</p>
+<p><em>唯一性：在每个元组中，候选键唯一标识该元组。</em></p>
+</li>
+<li>
+<p>Irreducibility: No proper subset of the candidate key has the  uniqueness property.</p>
+<p><em>不可还原性： 候选密钥的适当子集都不具有唯一性。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Primary Key</p>
+<ul>
+<li>
+<p>Candidate key selected to identify tuples uniquely within  relation.</p>
+<p><em>选定的候选键，用于在关系中唯一标识元组。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Foreign Key</p>
+<ul>
+<li>
+<p>Attribute, or set of attributes, within one relation that  matches candidate key of some (possibly same) relation.</p>
+<p><em>一个关系中与另一个（可能相同）关系的候选键相匹配的属性或属性集。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Composite Key</p>
+<ul>
+<li>
+<p>A candidate key that consists of two or more attributes.</p>
+<p><em>由两个或多个属性组成的候选密钥。</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Mapping-1-m-relationship-into-relational-model">Mapping 1:m relationship into relational model</h4>
+<p>Post a copy of the primary key  attribute(s) of one-side entity into the relation representing the many-side, to act  as a foreign key</p>
+<h1>Week 2</h1>
+<h2 id="2-1">2.1</h2>
+<h4 id="EER">EER</h4>
+<p>Semantic concepts are incorporated into the  original ER model and called the Enhanced  Entity-Relationship (EER) model.</p>
+<p><em>语义概念被纳入原始 ER 模型，称为增强实体-关系（EER）模型。</em></p>
+<h5 id="specialization-generalization">specialization/generalization</h5>
+<ul>
+<li>
+<p>Superclass</p>
+<ul>
+<li>
+<p>An entity type that includes one or more distinct  subgroups of its occurrences.</p>
+<p><em>实体类型，包括其出现的一个或多个不同子组。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Subclass</p>
+<ul>
+<li>
+<p>A distinct subgrouping of occurrences of an entity  type.</p>
+<p><em>实体类型出现次数的独特分组。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Superclass &amp; Subclass</p>
+<ul>
+<li>
+<p>Superclass/subclass relationship is one-to-one  (1: 1).</p>
+<p><em>超类/子类关系是一对一的（1: 1）。</em></p>
+</li>
+<li>
+<p>Superclass may contain overlapping or distinct  subclasses.</p>
+<p><em>超类可能包含重叠或不同的子类。</em></p>
+</li>
+<li>
+<p>Not all members of a superclass need be a  member of a subclass.</p>
+<p><em>并非所有超类成员都必须是子类成员。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Attribute Inheritance</p>
+<ul>
+<li>
+<p>An entity in a subclass represents same ‘real  world’ object as in superclass</p>
+<p><em>子类中的实体表示与超类中相同的“真实世界”对象</em></p>
+</li>
+<li>
+<p>May possess subclass-specific attributes, as well  as those associated with the superclass.</p>
+<p><em>可拥有子类的特定属性以及与超类相关的属性。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Specialization</p>
+<ul>
+<li>
+<p>Process of maximizing differences between  members of an entity by identifying their  distinguishing characteristics.</p>
+<p><em>通过识别实体成员的显著特征，最大限度地缩小成员之间差异的过程。</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Generalization</p>
+<ul>
+<li>
+<p>Process of minimizing differences between  entities by identifying their common  characteristics.</p>
+<p><em>通过确定实体的共同特征，最大限度地减少实体间差异的过程。</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-2">2.2</h2>
+<p>We will learn</p>
+<p>How to turn a conceptual ER model into a set of  relations (relational model).</p>
+<p>How to place foreign keys (and new relations) to  represent different multiplicities.</p>
+<ul>
+<li>Different rules for mapping 1: 1, 1: *,  *: * relationships</li>
+</ul>
+<p>How to represent subclass/superclass as a set of  relations.</p>
+<ul>
+<li>Different rules for optional/mandatory  disjoint/nondisjoint</li>
+</ul>
+<h2 id="2-3">2.3</h2>
+<h3 id="SQL">SQL</h3>
+<blockquote>
+<p>本处只做补充，详情可见</p>
+</blockquote>
+<h4 id="多表查询">多表查询</h4>
+<ul>
+<li>
+<p>FROM</p>
+<ul>
+<li>
+<p>可以查询一个或多个表格</p>
+</li>
+<li>
+<p>如果查询多表会将引用表格合成一个笛卡尔集</p>
+</li>
+<li>
+<p>数据量大，查询慢</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> x1.y1, x2.y2, ..., xn.yn</span><br><span class="line"><span class="keyword">FROM</span> xx, xxx, xxxx, ..., xn</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>JOIN / INNER JOIN</p>
+<ul>
+<li>
+<p>通过多个表之间的外键关联来进行拼接，注意用于拼接的列需要加上索引</p>
+<p><em>（MySQL会默认添加）</em></p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> x1.xxx1,</span><br><span class="line">	   x2.xxx2,</span><br><span class="line">	   x3.xxx3</span><br><span class="line"><span class="keyword">FROM</span> x1</span><br><span class="line"><span class="keyword">JOIN</span> x2</span><br><span class="line">    <span class="keyword">ON</span> x1.pk <span class="operator">=</span> x2.pk</span><br><span class="line"><span class="keyword">JOIN</span> x3</span><br><span class="line">	<span class="keyword">ON</span> x1.pk <span class="operator">=</span> x3.pk</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://vi0et.github.io">Viola</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://vi0et.github.io/2024/03/30/course/database/">https://vi0et.github.io/2024/03/30/course/database/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://vi0et.github.io" target="_blank">VI0LET</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://img.keaitupian.cn/uploads/2021/12/30/fc28eeb7bf984f769802f07dedb3d6cb.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://img.keaitupian.cn/uploads/2021/12/30/fc28eeb7bf984f769802f07dedb3d6cb.jpg" onerror="this.onerror=null;this.src='/img/friend_404.png'" alt="avatar"/></div><div class="author-info__name">Viola</div><div class="author-info__description">Viola's blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/VI0ET" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:1427368054@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Week 1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1"><span class="toc-number">1.1.</span> <span class="toc-text">1.1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#key-terms"><span class="toc-number">1.1.1.</span> <span class="toc-text">key terms</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Data"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">Data</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Database</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DBMS"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">DBMS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Database-application-programme"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">Database application programme</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Data-model"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">Data model</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Schema"><span class="toc-number">1.1.1.6.</span> <span class="toc-text">Schema</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Relation"><span class="toc-number">1.1.1.7.</span> <span class="toc-text">Relation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Relational-algebra"><span class="toc-number">1.1.1.8.</span> <span class="toc-text">Relational algebra</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Components-in-the-Database-Environment"><span class="toc-number">1.1.2.</span> <span class="toc-text">Components in the Database Environment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Roles-in-the-Database-Environment"><span class="toc-number">1.1.3.</span> <span class="toc-text">Roles in the Database Environment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Data-Administrator-DA"><span class="toc-number">1.1.4.</span> <span class="toc-text">Data Administrator (DA)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Database-Administrator-DBA"><span class="toc-number">1.1.5.</span> <span class="toc-text">Database Administrator (DBA)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Database-Designers-Logical-and-Physical"><span class="toc-number">1.1.6.</span> <span class="toc-text">Database Designers (Logical and Physical)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Application-Developers"><span class="toc-number">1.1.7.</span> <span class="toc-text">**Application Developers **</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#End-Users-naive-and-sophisticated"><span class="toc-number">1.1.8.</span> <span class="toc-text">End Users (naive and sophisticated)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Three-level-ANSI-SPARC-architecture"><span class="toc-number">1.1.9.</span> <span class="toc-text">Three level ANSI-SPARC architecture</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Objective"><span class="toc-number">1.1.9.1.</span> <span class="toc-text">Objective</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2"><span class="toc-number">1.2.</span> <span class="toc-text">1.2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#key-terns"><span class="toc-number">1.2.1.</span> <span class="toc-text">key terns</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Relational-model"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Relational model</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Terminology"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text">Terminology</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Relational-Algebra"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">Relational Algebra</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3"><span class="toc-number">1.3.</span> <span class="toc-text">1.3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ER-modeling"><span class="toc-number">1.3.1.</span> <span class="toc-text">ER modeling</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Entity"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">Entity</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Attributes"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">Attributes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Relationship"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">Relationship</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Relational-keys"><span class="toc-number">1.3.1.3.1.</span> <span class="toc-text">Relational keys</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mapping-1-m-relationship-into-relational-model"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">Mapping 1:m relationship into relational model</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Week 2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1"><span class="toc-number">2.1.</span> <span class="toc-text">2.1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#EER"><span class="toc-number">2.1.0.1.</span> <span class="toc-text">EER</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#specialization-generalization"><span class="toc-number">2.1.0.1.1.</span> <span class="toc-text">specialization&#x2F;generalization</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2"><span class="toc-number">2.2.</span> <span class="toc-text">2.2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3"><span class="toc-number">2.3.</span> <span class="toc-text">2.3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL"><span class="toc-number">2.3.1.</span> <span class="toc-text">SQL</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.3.1.1.</span> <span class="toc-text">多表查询</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/31/course/Prob-Stoc/" title="Prob&amp;Stoc">Prob&amp;Stoc</a><time datetime="2024-03-31T07:55:32.000Z" title="发表于 2024-03-31 15:55:32">2024-03-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/30/course/database/" title="database">database</a><time datetime="2024-03-30T05:19:16.000Z" title="发表于 2024-03-30 13:19:16">2024-03-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/13/codeing/reggie/" title="reggie">reggie</a><time datetime="2024-03-13T06:38:46.000Z" title="发表于 2024-03-13 14:38:46">2024-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/07/codeing/Java/" title="Java">Java</a><time datetime="2024-03-07T07:19:15.000Z" title="发表于 2024-03-07 15:19:15">2024-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/12/31/2023%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" title="2023年度总结">2023年度总结</a><time datetime="2023-12-31T14:04:16.000Z" title="发表于 2023-12-31 22:04:16">2023-12-31</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By Viola</div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://viola.website/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
